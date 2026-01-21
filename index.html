@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Jerome Duran | Game Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -28,7 +27,6 @@ body {
     background: radial-gradient(circle at top, #0b1020, #05070d);
     color: var(--text-main);
 }
-/* HEADER */
 header {
     padding: 80px 10% 60px;
     text-align: center;
@@ -59,7 +57,6 @@ nav a:hover {
     background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
     color: #05070d;
 }
-/* SECTION */
 section {
     padding: 80px 10%;
     background-color: var(--bg-section);
@@ -75,7 +72,6 @@ section h2 {
     margin-bottom: 40px;
     color: var(--neon-pink);
 }
-/* CARD */
 .card {
     background: var(--bg-card);
     padding: 30px;
@@ -83,7 +79,6 @@ section h2 {
     border: 1px solid var(--border-glow);
     box-shadow: 0 0 20px rgba(0,247,255,0.08);
 }
-/* ABOUT */
 .about-wrapper {
     display: flex;
     gap: 35px;
@@ -101,7 +96,6 @@ section h2 {
 .about-text p {
     color: var(--text-muted);
 }
-/* SKILLS */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -119,7 +113,6 @@ section h2 {
     background: var(--neon-blue);
     color: #05070d;
 }
-/* GAME */
 .game-box {
     width: 360px;
     height: 480px;
@@ -158,7 +151,6 @@ section h2 {
     border-radius: 6px;
     cursor: pointer;
 }
-/* SNAKE GAME STYLES */
 .game-container {
     text-align: center;
     max-width: 100%;
@@ -179,11 +171,8 @@ canvas {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     max-width: 100%;
     height: auto;
-    cursor: pointer;
-}
-canvas:focus {
-    outline: 3px solid #9bbc0f;
-    outline-offset: 4px;
+    display: block;
+    margin: 0 auto;
 }
 .mobile-controls {
     margin-top: 20px;
@@ -213,14 +202,8 @@ canvas:focus {
     color: #0f380f;
     transform: scale(0.95);
 }
-.control-btn.up {
-    grid-column: 2;
-    grid-row: 1;
-}
-.control-btn.left {
-    grid-column: 1;
-    grid-row: 2;
-}
+.control-btn.up { grid-column: 2; grid-row: 1; }
+.control-btn.left { grid-column: 1; grid-row: 2; }
 .control-btn.center {
     grid-column: 2;
     grid-row: 2;
@@ -229,14 +212,8 @@ canvas:focus {
     font-size: 1em;
     cursor: default;
 }
-.control-btn.right {
-    grid-column: 3;
-    grid-row: 2;
-}
-.control-btn.down {
-    grid-column: 2;
-    grid-row: 3;
-}
+.control-btn.right { grid-column: 3; grid-row: 2; }
+.control-btn.down { grid-column: 2; grid-row: 3; }
 .keyboard-controls {
     margin-top: 20px;
     color: #9bbc0f;
@@ -245,13 +222,13 @@ canvas:focus {
 .keyboard-controls p {
     margin: 5px 0;
 }
-.keyboard-status {
-    margin-top: 10px;
-    padding: 8px;
-    background-color: #306230;
-    color: #9bbc0f;
+.key-indicator {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #306230;
     border-radius: 5px;
-    font-size: 0.9em;
+    margin: 5px;
+    font-weight: bold;
 }
 #gameOverScreen {
     position: absolute;
@@ -259,7 +236,7 @@ canvas:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(15, 56, 15, 0.9);
+    background-color: rgba(15, 56, 15, 0.95);
     color: #9bbc0f;
     border-radius: 10px;
     padding: 40px;
@@ -297,14 +274,12 @@ canvas:focus {
 .restart-btn:active {
     transform: scale(0.95);
 }
-/* FOOTER */
 footer {
     background: #03040a;
     padding: 40px 10%;
     text-align: center;
     color: var(--text-muted);
 }
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .about-wrapper {
         justify-content: center;
@@ -312,32 +287,17 @@ footer {
     }
 }
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-    canvas {
-        width: 100%;
-        height: auto;
-    }
+    h1 { font-size: 2em; }
+    canvas { width: 100%; height: auto; }
     .mobile-controls {
         grid-template-columns: repeat(3, 70px);
         grid-template-rows: repeat(3, 70px);
     }
-    .control-btn {
-        font-size: 1.5em;
-    }
-    .keyboard-controls {
-        font-size: 0.8em;
-    }
-    #gameOverScreen {
-        padding: 30px;
-    }
-    #gameOverScreen h2 {
-        font-size: 2em;
-    }
-    #gameOverScreen p {
-        font-size: 1.2em;
-    }
+    .control-btn { font-size: 1.5em; }
+    .keyboard-controls { font-size: 0.8em; }
+    #gameOverScreen { padding: 30px; }
+    #gameOverScreen h2 { font-size: 2em; }
+    #gameOverScreen p { font-size: 1.2em; }
 }
 </style>
 </head>
@@ -353,6 +313,7 @@ footer {
     <a href="#contact">CONTACT</a>
 </nav>
 </header>
+
 <section id="about">
 <div class="container">
 <h2>PLAYER PROFILE</h2>
@@ -371,6 +332,7 @@ footer {
 </div>
 </div>
 </section>
+
 <section id="skills">
 <div class="container">
 <h2>SKILL TREE</h2>
@@ -385,7 +347,7 @@ footer {
 </div>
 </div>
 </section>
-<!-- SNAKE GAME SECTION -->
+
 <section id="snake-game">
 <div class="container">
 <h2>SNAKE GAME</h2>
@@ -394,14 +356,14 @@ footer {
         Score: <span id="snakeScore">0</span>
     </div>
     <div style="position: relative;">
-        <canvas id="gameCanvas" width="500" height="500" tabindex="0"></canvas>
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
         <div id="gameOverScreen">
             <h2>GAME OVER!</h2>
             <p>Final Score: <span id="finalScore">0</span></p>
             <button class="restart-btn" onclick="restartGame()">PLAY AGAIN</button>
         </div>
     </div>
-    <!-- Mobile Control Buttons -->
+    
     <div class="mobile-controls">
         <button class="control-btn up" id="btnUp">▲</button>
         <button class="control-btn left" id="btnLeft">◄</button>
@@ -409,15 +371,26 @@ footer {
         <button class="control-btn right" id="btnRight">►</button>
         <button class="control-btn down" id="btnDown">▼</button>
     </div>
+    
     <div class="keyboard-controls">
-        <p><strong>Desktop:</strong> Arrow Keys or WASD</p>
-        <p><strong>Mobile:</strong> Use buttons above</p>
-        <div class="keyboard-status" id="keyStatus">⌨️ Arrow Keys Ready!</div>
+        <p><strong>🎮 Keyboard Controls:</strong></p>
+        <p>
+            <span class="key-indicator">↑</span>
+            <span class="key-indicator">↓</span>
+            <span class="key-indicator">←</span>
+            <span class="key-indicator">→</span>
+            or WASD
+        </p>
+        <p id="keyStatus" style="color: #00ff00; font-weight: bold;">✅ Arrow Keys Active!</p>
     </div>
 </div>
 </div>
 </section>
+
 <script>
+(function() {
+    'use strict';
+    
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
     const scoreElement = document.getElementById('snakeScore');
@@ -439,20 +412,60 @@ footer {
     let snakeScore = 0;
     let gameLoop = null;
     
+    // KEYBOARD HANDLER - THIS IS THE MAIN FIX!
+    window.addEventListener('keydown', function(e) {
+        // Show feedback
+        keyStatus.textContent = '🎮 Key: ' + e.key;
+        setTimeout(() => {
+            keyStatus.textContent = '✅ Arrow Keys Active!';
+        }, 300);
+        
+        // Game over - restart with space
+        if (gameOver && (e.key === ' ' || e.code === 'Space')) {
+            e.preventDefault();
+            restartGame();
+            return;
+        }
+        
+        // Not running - ignore
+        if (!running) return;
+        
+        // Prevent default for arrow keys
+        if (e.key.startsWith('Arrow')) {
+            e.preventDefault();
+        }
+        
+        // ARROW UP or W
+        if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {
+            if (direction !== 'DOWN') {
+                nextDirection = 'UP';
+            }
+        }
+        // ARROW DOWN or S
+        else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
+            if (direction !== 'UP') {
+                nextDirection = 'DOWN';
+            }
+        }
+        // ARROW LEFT or A
+        else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+            if (direction !== 'RIGHT') {
+                nextDirection = 'LEFT';
+            }
+        }
+        // ARROW RIGHT or D
+        else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+            if (direction !== 'LEFT') {
+                nextDirection = 'RIGHT';
+            }
+        }
+    }, true); // Use capture phase!
+    
     function init() {
         canvas.width = GRID_WIDTH * TILE_SIZE;
         canvas.height = GRID_HEIGHT * TILE_SIZE;
         setupMobileControls();
-        setupKeyboardControls();
         startGame();
-        
-        // Auto-focus canvas
-        canvas.focus();
-        
-        // Focus canvas when clicked
-        canvas.addEventListener('click', () => {
-            canvas.focus();
-        });
     }
     
     function setupMobileControls() {
@@ -461,101 +474,21 @@ footer {
         const btnLeft = document.getElementById('btnLeft');
         const btnRight = document.getElementById('btnRight');
         
-        // Prevent default touch behavior
-        [btnUp, btnDown, btnLeft, btnRight].forEach(btn => {
-            btn.addEventListener('touchstart', (e) => e.preventDefault());
-        });
-        
-        btnUp.addEventListener('click', () => {
+        btnUp.onclick = () => {
             if (running && direction !== 'DOWN') nextDirection = 'UP';
-        });
+        };
         
-        btnDown.addEventListener('click', () => {
+        btnDown.onclick = () => {
             if (running && direction !== 'UP') nextDirection = 'DOWN';
-        });
+        };
         
-        btnLeft.addEventListener('click', () => {
+        btnLeft.onclick = () => {
             if (running && direction !== 'RIGHT') nextDirection = 'LEFT';
-        });
+        };
         
-        btnRight.addEventListener('click', () => {
+        btnRight.onclick = () => {
             if (running && direction !== 'LEFT') nextDirection = 'RIGHT';
-        });
-        
-        // Touch support
-        btnUp.addEventListener('touchstart', () => {
-            if (running && direction !== 'DOWN') nextDirection = 'UP';
-        });
-        
-        btnDown.addEventListener('touchstart', () => {
-            if (running && direction !== 'UP') nextDirection = 'DOWN';
-        });
-        
-        btnLeft.addEventListener('touchstart', () => {
-            if (running && direction !== 'RIGHT') nextDirection = 'LEFT';
-        });
-        
-        btnRight.addEventListener('touchstart', () => {
-            if (running && direction !== 'LEFT') nextDirection = 'RIGHT';
-        });
-    }
-    
-    function setupKeyboardControls() {
-        // Global keyboard listener (works anywhere on page)
-        document.addEventListener('keydown', handleKeyPress);
-        
-        // Canvas-specific listener (for extra reliability)
-        canvas.addEventListener('keydown', handleKeyPress);
-    }
-    
-    function handleKeyPress(e) {
-        // Show key status
-        keyStatus.textContent = `⌨️ Key Pressed: ${e.key}`;
-        setTimeout(() => {
-            keyStatus.textContent = '⌨️ Arrow Keys Ready!';
-        }, 500);
-        
-        // Restart on space when game over
-        if (gameOver && (e.code === 'Space' || e.key === ' ')) {
-            restartGame();
-            e.preventDefault();
-            return;
-        }
-        
-        if (!running) return;
-        
-        // Handle all arrow key variations
-        const key = e.key.toLowerCase();
-        const code = e.code;
-        
-        // UP
-        if (key === 'arrowup' || key === 'w' || code === 'ArrowUp' || code === 'KeyW') {
-            if (direction !== 'DOWN') {
-                nextDirection = 'UP';
-                e.preventDefault();
-            }
-        }
-        // DOWN
-        else if (key === 'arrowdown' || key === 's' || code === 'ArrowDown' || code === 'KeyS') {
-            if (direction !== 'UP') {
-                nextDirection = 'DOWN';
-                e.preventDefault();
-            }
-        }
-        // LEFT
-        else if (key === 'arrowleft' || key === 'a' || code === 'ArrowLeft' || code === 'KeyA') {
-            if (direction !== 'RIGHT') {
-                nextDirection = 'LEFT';
-                e.preventDefault();
-            }
-        }
-        // RIGHT
-        else if (key === 'arrowright' || key === 'd' || code === 'ArrowRight' || code === 'KeyD') {
-            if (direction !== 'LEFT') {
-                nextDirection = 'RIGHT';
-                e.preventDefault();
-            }
-        }
+        };
     }
     
     function startGame() {
@@ -577,9 +510,6 @@ footer {
         
         if (gameLoop) clearInterval(gameLoop);
         gameLoop = setInterval(update, GAME_SPEED);
-        
-        // Focus canvas for immediate keyboard control
-        canvas.focus();
     }
     
     function spawnFood() {
@@ -608,14 +538,14 @@ footer {
             case 'RIGHT': head.x++; break;
         }
         
-        // Check wall collision
+        // Wall collision
         if (head.x < 0 || head.x >= GRID_WIDTH || 
             head.y < 0 || head.y >= GRID_HEIGHT) {
             endGame();
             return;
         }
         
-        // Check self collision
+        // Self collision
         if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
             endGame();
             return;
@@ -623,7 +553,7 @@ footer {
         
         snake.unshift(head);
         
-        // Check if food is eaten
+        // Food eaten
         if (head.x === food.x && head.y === food.y) {
             snakeScore += 10;
             updateScore();
@@ -636,28 +566,17 @@ footer {
     }
     
     function draw() {
-        // Clear canvas
         ctx.fillStyle = '#9bbc0f';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        // Draw food
+        // Food
         ctx.fillStyle = '#306230';
-        ctx.fillRect(
-            food.x * TILE_SIZE,
-            food.y * TILE_SIZE,
-            TILE_SIZE,
-            TILE_SIZE
-        );
+        ctx.fillRect(food.x * TILE_SIZE, food.y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
         
-        // Draw snake
+        // Snake
         snake.forEach((segment, index) => {
             ctx.fillStyle = index === 0 ? '#0f380f' : '#306230';
-            ctx.fillRect(
-                segment.x * TILE_SIZE,
-                segment.y * TILE_SIZE,
-                TILE_SIZE,
-                TILE_SIZE
-            );
+            ctx.fillRect(segment.x * TILE_SIZE, segment.y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
         });
     }
     
@@ -673,14 +592,14 @@ footer {
         scoreElement.textContent = snakeScore;
     }
     
-    function restartGame() {
+    window.restartGame = function() {
         startGame();
-    }
+    };
     
-    // Start the game when page loads
     init();
+})();
 </script>
-<!-- CLICK THE ENEMY GAME -->
+
 <section id="click-game">
 <div class="container">
 <h2>CLICK THE ENEMY</h2>
@@ -694,21 +613,25 @@ footer {
 </div>
 </div>
 </section>
+
 <script>
 const enemy = document.getElementById("enemy");
 const clickScoreText = document.getElementById("clickScore");
 const startBtn = document.getElementById("startBtn");
 let clickScore = 0;
 let timer;
+
 function randomPosition() {
     enemy.style.left = Math.random() * 280 + "px";
     enemy.style.top = Math.random() * 320 + 80 + "px";
 }
+
 enemy.onclick = () => {
     clickScore++;
     clickScoreText.textContent = clickScore;
     randomPosition();
 };
+
 startBtn.onclick = () => {
     clickScore = 0;
     clickScoreText.textContent = clickScore;
@@ -724,6 +647,7 @@ startBtn.onclick = () => {
     }, 20000);
 };
 </script>
+
 <section id="certs">
 <div class="container">
 <h2>CERTIFICATIONS</h2>
@@ -736,6 +660,7 @@ startBtn.onclick = () => {
 </div>
 </div>
 </section>
+
 <section id="contact">
 <div class="container">
 <h2>CONTACT</h2>
@@ -744,8 +669,10 @@ startBtn.onclick = () => {
 </div>
 </div>
 </section>
+
 <footer>
 <p>© 2026 JEROME DURAN</p>
 </footer>
+
 </body>
 </html>
